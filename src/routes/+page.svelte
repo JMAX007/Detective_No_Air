@@ -1,16 +1,15 @@
-<script lang="ts">
-    let tituloDoJogo : string = "Detective no Air"
-</script>
+<div class="menu-container">
+  <h1>Detective no Air</h1>
 
-<h1>
-    {tituloDoJogo}
-</h1>
+  <div class="menu">
+    <a href="/jogar" class="botao-arma">
+      <img src="/images/pistola.png" alt="Jogar">
+      <span>Jogar</span>
+    </a>
 
-<br />
-
-<!-- From Uiverse.io by JohnnyCSilva --> 
-<button class="btn">Button 
-  <span class="icon-right"></span>
-  <span class="icon-right after"></span>
-</button>
-<a class="menu" href="/sobre">Sobre</a> 
+    <a href="/sobre" class="botao-arma">
+      <img src="/images/pistola.png" alt="Sobre">
+      <span>Sobre</span>
+    </a>
+  </div>
+</div>
