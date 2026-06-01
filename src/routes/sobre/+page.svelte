@@ -1,50 +1,30 @@
-<div class="tela-sobre">
+<div class="sobre-container">
 
-  <h1>Sobre o jogo</h1>
+  <!-- LOGO / EMPRESA -->
+  <img src="/images/jjgl-logo.png" alt="JJGL Studios" class="logo" />
+  <p class="empresa">JJGL Studios apresenta</p>
 
-  <p class="creators">
-    Creators: João Gabriel, João Matheus, Lucas Nunes, Gabriel Mendes
+  <!-- NOME DO JOGO -->
+  <h1>Detective No Air</h1>
+
+  <!-- SINOPSE -->
+  <p class="sinopse">
+    Em uma cidade tomada pelo mistério e pelo crime, Fin McDaen um detetive solitário precisa resolver
+    qualquer tipo de caso,até aqueles que desafiam a lógica. Cada decisão pode revelar a verdade, assasinatos
+    ,roubos e muito mais, será que Finn conseguirá desvendar os segredos por trás de cada misterio, embarque
+    nessa aventura e descubra o que está nas entrelinhas,será que consegues?
   </p>
 
-  <a href="/" class="botao-voltar">
-    Voltar ao Menu
-  </a>
+  <!-- CRIADORES -->
+  <div class="criadores">
+    <h2>Creators</h2>
+    <p>João Gabriel</p>
+    <p>João Matheus</p>
+    <p>Lucas Nunes</p>
+    <p>Gabriel Gomes</p>
+  </div>
+
+  <!-- BOTÃO VOLTAR -->
+  <a href="/" class="botao-voltar">Voltar ao menu</a>
 
 </div>
-
-<style>
-  .tela-sobre {
-    height: 100vh;
-    background: #111;
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .creators {
-    font-size: 18px;
-  }
-
-  .botao-voltar {
-    padding: 10px 20px;
-    background: #8b4513;
-    color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-
-  .botao-voltar:hover {
-    background: #a0522d;
-  }
-
-  .botao-voltar:active {
-    transform: scale(0.95);
-  }
-</style>

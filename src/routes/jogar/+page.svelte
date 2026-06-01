@@ -1,41 +1,43 @@
-<div class="tela-jogo">
+<script>
+  let texto = "";
 
-  <h1>Jogo iniciado</h1>
+  function clicar(obj) {
+    if (obj === "despertador") {
+      texto = "Ah... acordei. Hoje vai ser um longo dia.";
+    }
+  }
 
-  <a href="/" class="botao-voltar">
-    Voltar ao Menu
-  </a>
+  function voltarMenu() {
+    window.location.href = "/";
+  }
+</script>
 
+<style src="../../styles/jogar.css"></style>
+
+<div class="tela">
+  <div class="cenario">
+
+    <!-- FUNDO -->
+    <img src="/images/quarto.jpeg" class="fundo" />
+
+    <!-- DESPERTADOR -->
+    <img 
+      src="/images/despertador.png" 
+      class="obj_despertador"
+      on:click={() => clicar("despertador")}
+    />
+
+    <!-- BOTÃO VOLTAR -->
+    <button class="btn-voltar" on:click={voltarMenu}>
+      Voltar
+    </button>
+
+    <!-- CAIXA DE DIÁLOGO -->
+    {#if texto}
+      <div class="dialogo">
+        {texto}
+      </div>
+    {/if}
+
+  </div>
 </div>
-
-<style>
-  .tela-jogo {
-    height: 100vh;
-    background: linear-gradient(black, darkred);
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .botao-voltar {
-    padding: 10px 20px;
-    background: #8b4513;
-    color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-
-  .botao-voltar:hover {
-    background: #a0522d;
-  }
-
-  .botao-voltar:active {
-    transform: scale(0.95);
-  }
-</style>
