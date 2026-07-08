@@ -9,7 +9,7 @@
 
   <!-- SINOPSE -->
   <p class="sinopse">
-    Em uma cidade tomada pelo mistério e pelo crime, Fin McDaen um detetive solitário precisa resolver
+    Em uma cidade tomada pelo mistério e pelo crime, Fin McClaen um detetive solitário precisa resolver
     qualquer tipo de caso,até aqueles que desafiam a lógica. Cada decisão pode revelar a verdade, assasinatos
     ,roubos e muito mais, será que Finn conseguirá desvendar os segredos por trás de cada misterio, embarque
     nessa aventura e descubra o que está nas entrelinhas,será que consegues?
