@@ -1,3 +1,25 @@
+/* --- TELA PRINCIPAL --- */
+.tela, .cenario {
+  position: relative;
+  width: 100vw;       /* Ocupa 100% da largura da janela */
+  height: 100vh;      /* Ocupa 100% da altura da janela */
+  overflow: hidden;   /* Remove qualquer barra de rolagem */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- IMAGEM DE FUNDO --- */
+.fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Isso é MUITO importante: preenche a tela sem distorcer */
+  display: block;
+  z-index: 1;
+}
+
 /* --- BOTÃO DE VOLTAR PROVISÓRIO --- */
 .btn-voltar-provisorio {
   position: absolute;
@@ -15,61 +37,43 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
   font-family: 'SpecialElite', serif;
   transition: transform 0.1s, background 0.2s;
+  z-index: 20; /* Garante que fique acima até da imagem */
 }
 .btn-voltar-provisorio:hover {
   transform: scale(1.05);
   background-color: #cc0000;
 }
 
-/* --- HOTSPOTS (Áreas clicáveis transparentes) --- */
-.hotspot {
-  position: absolute;
-  background: transparent; /* Deixa invisível */
-  cursor: pointer;
-  z-index: 5;
-  transition: background 0.2s;
-}
-.hotspot:hover {
-  background: rgba(255, 255, 255, 0.15); /* Brilho ao passar o mouse */
-}
-
-/* --- CAIXA DE DIÁLOGO E PERSONAGEM --- */
+/* --- BALÃO DE DIÁLOGO E PERSONAGEM --- */
 .container-dialogo {
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  align-items: flex-end; /* Alinha a imagem no rodapé */
+  align-items: flex-end;
   gap: 15px;
   z-index: 10;
-  width: 80%;
-  max-width: 800px;
-  pointer-events: none; /* Permite clicar atrás do balão se necessário */
-}
-.container-dialogo * {
-  pointer-events: auto; /* Faz os cliques funcionarem nos elementos internos */
+  width: 90%;
+  max-width: 800px; /* Define um tamanho máximo para o balão */
+  pointer-events: none;
 }
 
-/* --- IMAGEM DO FINN --- */
+/* CONSERTANDO O PERSONAGEM GIGANTE */
 .personagem-wrapper {
-  width: 140px; /* Ajuste o tamanho da imagem do personagem aqui */
-  flex-shrink: 0;
+  width: 140px;     /* Define a largura máxima do personagem */
+  flex-shrink: 0;   /* Impede que o personagem seja esmagado pelo balão */
 }
 .finn-img {
-  width: 100%;
+  width: 100%;      /* A imagem vai ocupar 100% dos 140px definidos acima */
   height: auto;
   display: block;
-  /* Ajuste o 'margin-bottom' se quiser subir ou descer o personagem */
-  margin-bottom: -5px; 
 }
 
 /* --- BALÃO DE FALA --- */
 .balao-fala {
-  background-color: rgba(255, 255, 255, 0.92);
-  color: #222;
-  padding: 20px 30px;
-  border-radius: 10px;
+  padding: 25px 30px;
+  border-radius: 5px;
   position: relative;
   font-family: 'SpecialElite', serif;
   font-size: 1.2rem;
@@ -77,19 +81,18 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   min-height: 80px;
   line-height: 1.5;
+  pointer-events: auto;
+  width: 100%;
 }
 
-/* O "biquinho" do balão apontando para o personagem */
 .balao-fala::before {
   content: "";
   position: absolute;
   left: -15px;
   bottom: 20px;
   border: 10px solid transparent;
-  border-right-color: rgba(255, 255, 255, 0.92);
 }
 
-/* --- BOTÃO DE FECHAR O BALÃO (X) --- */
 .btn-fechar {
   position: absolute;
   top: -12px;
@@ -107,4 +110,57 @@
 }
 .btn-fechar:hover {
   background: #000;
+}
+
+/* --- ÁREAS CLICÁVEIS (HOTSPOTS) --- */
+.hotspot {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.3); /* Vermelho transparente */
+  border: 2px solid yellow;              /* Borda amarela */
+  cursor: pointer;
+  z-index: 5;
+}
+.hotspot:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+/* ABAIXO: COPIE AS CORES DO BALÃO QUE EU TE PASSEI ONTEM */
+.balao-fala.padrao {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #222;
+}
+.balao-fala.padrao::before {
+  border-right-color: rgba(255, 255, 255, 0.92);
+}
+.balao-fala.alerta {
+  background-color: #ffeb3b; 
+  color: #333;
+  border: 2px solid #f57f17;
+}
+.balao-fala.alerta::before {
+  border-right-color: #ffeb3b;
+}
+.balao-fala.retrato {
+  background-color: #d7ccc8; 
+  color: #3e2723;
+  border: 2px solid #5d4037;
+}
+.balao-fala.retrato::before {
+  border-right-color: #d7ccc8;
+}
+.balao-fala.carta {
+  background-color: #ffecb3; 
+  color: #1a1a1a;
+  border: 2px solid #b71c1c;
+}
+.balao-fala.carta::before {
+  border-right-color: #ffecb3;
+}
+.balao-fala.quadro {
+  background-color: #263238; 
+  color: #ffffff;
+  border: 2px solid #b71c1c;
+}
+.balao-fala.quadro::before {
+  border-right-color: #263238;
 }
