@@ -1,26 +1,29 @@
-/* --- TELA PRINCIPAL --- */
+/* ========================================================== */
+/* CONFIGURAÇÃO DA TELA E FUNDO                               */
+/* ========================================================== */
 .tela, .cenario {
   position: relative;
-  width: 100vw;       /* Ocupa 100% da largura da janela */
-  height: 100vh;      /* Ocupa 100% da altura da janela */
-  overflow: hidden;   /* Remove qualquer barra de rolagem */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* --- IMAGEM DE FUNDO --- */
 .fundo {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Isso é MUITO importante: preenche a tela sem distorcer */
+  object-fit: cover;
   display: block;
   z-index: 1;
 }
 
-/* --- BOTÃO DE VOLTAR PROVISÓRIO --- */
+/* ========================================================== */
+/* BOTÃO DE VOLTAR PROVISÓRIO                                 */
+/* ========================================================== */
 .btn-voltar-provisorio {
   position: absolute;
   top: 20px;
@@ -37,14 +40,46 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
   font-family: 'SpecialElite', serif;
   transition: transform 0.1s, background 0.2s;
-  z-index: 20; /* Garante que fique acima até da imagem */
 }
 .btn-voltar-provisorio:hover {
   transform: scale(1.05);
   background-color: #cc0000;
 }
 
-/* --- BALÃO DE DIÁLOGO E PERSONAGEM --- */
+/* ========================================================== */
+/* POSICIONAMENTO DOS BOTÕES INVISÍVEIS (HOTSPOTS)            */
+/* ========================================================== */
+.hotspot {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.3); /* Cor para você achar eles na tela */
+  border: 2px solid yellow;
+  cursor: pointer;
+  z-index: 5;
+}
+.hotspot:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+/* Posições específicas de cada botão */
+.hotspot.maçaneta {
+  top: 120px; left: 950px; width: 100px; height: 500px;
+}
+.hotspot.despertador {
+  top: 330px; left: 774px; width: 40px; height: 50px;
+}
+.hotspot.retrato-botao {
+  top: 302px; left: 700px; width: 60px; height: 85px;
+}
+.hotspot.carta-botao {
+  top: 630px; left: 1050px; width: 130px; height: 50px;
+}
+.hotspot.quadro-botao {
+  top: 200px; left: 1100px; width: 400px; height: 370px;
+}
+
+/* ========================================================== */
+/* CONFIGURAÇÃO DO PERSONAGEM E DO BALÃO                      */
+/* ========================================================== */
 .container-dialogo {
   position: absolute;
   bottom: 30px;
@@ -55,22 +90,20 @@
   gap: 15px;
   z-index: 10;
   width: 90%;
-  max-width: 800px; /* Define um tamanho máximo para o balão */
+  max-width: 800px;
   pointer-events: none;
 }
 
-/* CONSERTANDO O PERSONAGEM GIGANTE */
 .personagem-wrapper {
-  width: 140px;     /* Define a largura máxima do personagem */
-  flex-shrink: 0;   /* Impede que o personagem seja esmagado pelo balão */
+  width: 140px;
+  flex-shrink: 0;
 }
 .finn-img {
-  width: 100%;      /* A imagem vai ocupar 100% dos 140px definidos acima */
+  width: 100%;
   height: auto;
   display: block;
 }
 
-/* --- BALÃO DE FALA --- */
 .balao-fala {
   padding: 25px 30px;
   border-radius: 5px;
@@ -82,9 +115,9 @@
   min-height: 80px;
   line-height: 1.5;
   pointer-events: auto;
-  width: 100%;
 }
 
+/* O "biquinho" do balão */
 .balao-fala::before {
   content: "";
   position: absolute;
@@ -112,19 +145,9 @@
   background: #000;
 }
 
-/* --- ÁREAS CLICÁVEIS (HOTSPOTS) --- */
-.hotspot {
-  position: absolute;
-  background-color: rgba(255, 0, 0, 0.3); /* Vermelho transparente */
-  border: 2px solid yellow;              /* Borda amarela */
-  cursor: pointer;
-  z-index: 5;
-}
-.hotspot:hover {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-
-/* ABAIXO: COPIE AS CORES DO BALÃO QUE EU TE PASSEI ONTEM */
+/* ========================================================== */
+/* CORES PERSONALIZADAS DOS BALÕES                            */
+/* ========================================================== */
 .balao-fala.padrao {
   background-color: rgba(255, 255, 255, 0.92);
   color: #222;
@@ -132,6 +155,7 @@
 .balao-fala.padrao::before {
   border-right-color: rgba(255, 255, 255, 0.92);
 }
+
 .balao-fala.alerta {
   background-color: #ffeb3b; 
   color: #333;
@@ -140,6 +164,7 @@
 .balao-fala.alerta::before {
   border-right-color: #ffeb3b;
 }
+
 .balao-fala.retrato {
   background-color: #d7ccc8; 
   color: #3e2723;
@@ -148,6 +173,7 @@
 .balao-fala.retrato::before {
   border-right-color: #d7ccc8;
 }
+
 .balao-fala.carta {
   background-color: #ffecb3; 
   color: #1a1a1a;
@@ -156,6 +182,7 @@
 .balao-fala.carta::before {
   border-right-color: #ffecb3;
 }
+
 .balao-fala.quadro {
   background-color: #263238; 
   color: #ffffff;
