@@ -1,6 +1,4 @@
-/* ========================================================== */
-/* CONFIGURAÇÃO DA TELA E FUNDO                               */
-/* ========================================================== */
+/* CONFIGURAÇÃO DA TELA E FUNDO */
 .tela, .cenario {
   position: relative;
   width: 100vw;
@@ -21,9 +19,7 @@
   z-index: 1;
 }
 
-/* ========================================================== */
-/* BOTÃO DE VOLTAR PROVISÓRIO                                 */
-/* ========================================================== */
+/* BOTÃO DE VOLTAR PROVISÓRIO */
 .btn-voltar-provisorio {
   position: absolute;
   top: 20px;
@@ -46,148 +42,104 @@
   background-color: #cc0000;
 }
 
-/* ========================================================== */
-/* POSICIONAMENTO DOS BOTÕES INVISÍVEIS (HOTSPOTS)            */
-/* ========================================================== */
+/* HOTSPOTS (Totalmente invisíveis) */
 .hotspot {
   position: absolute;
-  background-color: rgba(255, 0, 0, 0.3); /* Cor para você achar eles na tela */
-  border: 2px solid yellow;
+  background: transparent;
+  border: none;
   cursor: pointer;
   z-index: 5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
+
 .hotspot:hover {
-  background-color: rgba(255, 0, 0, 0.7);
+  background: rgba(255, 240, 200, 0.15); 
+  border: 1px solid rgba(255, 240, 200, 0.5);
+  transform: scale(1.05); 
+  box-shadow: 0 0 15px 5px rgba(255, 240, 200, 0.2); 
 }
 
-/* Posições específicas de cada botão */
-.hotspot.maçaneta {
-  top: 120px; left: 950px; width: 100px; height: 500px;
-}
-.hotspot.despertador {
-  top: 330px; left: 774px; width: 40px; height: 50px;
-}
-.hotspot.retrato-botao {
-  top: 302px; left: 700px; width: 60px; height: 85px;
-}
-.hotspot.carta-botao {
-  top: 630px; left: 1050px; width: 130px; height: 50px;
-}
-.hotspot.quadro-botao {
-  top: 200px; left: 1100px; width: 400px; height: 370px;
-}
+/* POSICIONAMENTO DOS BOTÕES */
+.hotspot.maçaneta { top: 120px; left: 950px; width: 100px; height: 500px; }
+.hotspot.despertador { top: 330px; left: 774px; width: 40px; height: 50px; }
+.hotspot.retrato-botao { top: 302px; left: 700px; width: 60px; height: 85px; }
+.hotspot.carta-botao { top: 630px; left: 1050px; width: 130px; height: 50px; }
+.hotspot.quadro-botao { top: 200px; left: 1100px; width: 400px; height: 370px; }
 
-/* ========================================================== */
-/* CONFIGURAÇÃO DO PERSONAGEM E DO BALÃO                      */
-/* ========================================================== */
+/* CONFIGURAÇÃO DO PERSONAGEM, ESCALA E BALÃO */
 .container-dialogo {
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 15px;
+  gap: 0px;
   z-index: 10;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   pointer-events: none;
 }
 
 .personagem-wrapper {
-  width: 140px;
+  width: 180px;
   flex-shrink: 0;
+  margin-bottom: -15px;
 }
+
 .finn-img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.balao-fala {
-  padding: 25px 30px;
-  border-radius: 5px;
+.balao-wrapper {
   position: relative;
-  font-family: 'SpecialElite', serif;
-  font-size: 1.2rem;
-  flex-grow: 1;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-  min-height: 80px;
-  line-height: 1.5;
+  max-width: 550px;
+  width: 100%;
+  flex-grow: 0;
+  pointer-events: none;
+}
+.balao-wrapper * {
   pointer-events: auto;
 }
 
-/* O "biquinho" do balão */
-.balao-fala::before {
-  content: "";
+.balao-imagem {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.texto-balao {
   position: absolute;
-  left: -15px;
-  bottom: 20px;
-  border: 10px solid transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  color: #3e2723;
+  font-family: 'SpecialElite', serif;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .btn-fechar {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 20px;
+  right: 20px;
   background: #333;
   color: #fff;
-  border: none;
+  border: 2px solid #fff;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
   font-weight: bold;
   font-size: 14px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 .btn-fechar:hover {
   background: #000;
-}
-
-/* ========================================================== */
-/* CORES PERSONALIZADAS DOS BALÕES                            */
-/* ========================================================== */
-.balao-fala.padrao {
-  background-color: rgba(255, 255, 255, 0.92);
-  color: #222;
-}
-.balao-fala.padrao::before {
-  border-right-color: rgba(255, 255, 255, 0.92);
-}
-
-.balao-fala.alerta {
-  background-color: #ffeb3b; 
-  color: #333;
-  border: 2px solid #f57f17;
-}
-.balao-fala.alerta::before {
-  border-right-color: #ffeb3b;
-}
-
-.balao-fala.retrato {
-  background-color: #d7ccc8; 
-  color: #3e2723;
-  border: 2px solid #5d4037;
-}
-.balao-fala.retrato::before {
-  border-right-color: #d7ccc8;
-}
-
-.balao-fala.carta {
-  background-color: #ffecb3; 
-  color: #1a1a1a;
-  border: 2px solid #b71c1c;
-}
-.balao-fala.carta::before {
-  border-right-color: #ffecb3;
-}
-
-.balao-fala.quadro {
-  background-color: #263238; 
-  color: #ffffff;
-  border: 2px solid #b71c1c;
-}
-.balao-fala.quadro::before {
-  border-right-color: #263238;
+  transform: scale(1.1);
 }

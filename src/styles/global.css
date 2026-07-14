@@ -25,7 +25,7 @@ body {
   position: relative;
 
   /* Imagem de fundo do personagem */
-  background-image: url('/images/Finn.jpeg');
+  background-image: url('/images/José.jpeg');
   background-size: 100%;
   background-position: center 20%; /* Ajuste manual para focar mais no rosto */
   background-repeat: no-repeat;
