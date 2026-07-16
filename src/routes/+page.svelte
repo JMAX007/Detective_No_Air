@@ -1,10 +1,10 @@
 <div class="menu-container">
-  <h1>Detective no Air</h1>
+  <h1>Rastros da Madrugada</h1>
 
   <div class="menu">
-    <a href="/jogar" class="botao-arma">
-      <img src="/images/pistola.png" alt="Jogar">
-      <span>Jogar</span>
+    <a href="/intro" class="botao-arma">
+      <img src="/images/pistola.png" alt="intro">
+      <span>intro</span>
     </a>
 
     <a href="/sobre" class="botao-arma">

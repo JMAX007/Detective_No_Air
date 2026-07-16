@@ -1,4 +1,4 @@
-/* CONFIGURAÇÃO DA TELA E FUNDO */
+/* --- CONFIGURAÇÃO DA TELA E FUNDO --- */
 .tela, .cenario {
   position: relative;
   width: 100vw;
@@ -19,7 +19,7 @@
   z-index: 1;
 }
 
-/* BOTÃO DE VOLTAR PROVISÓRIO */
+/* --- BOTÃO DE VOLTAR PROVISÓRIO --- */
 .btn-voltar-provisorio {
   position: absolute;
   top: 20px;
@@ -42,7 +42,7 @@
   background-color: #cc0000;
 }
 
-/* HOTSPOTS (Totalmente invisíveis) */
+/* --- CONFIGURAÇÃO DOS HOTSPOTS --- */
 .hotspot {
   position: absolute;
   background: transparent;
@@ -59,32 +59,33 @@
   box-shadow: 0 0 15px 5px rgba(255, 240, 200, 0.2); 
 }
 
-/* POSICIONAMENTO DOS BOTÕES */
+/* --- POSICIONAMENTO DOS BOTÕES --- */
 .hotspot.maçaneta { top: 120px; left: 950px; width: 100px; height: 500px; }
 .hotspot.despertador { top: 330px; left: 774px; width: 40px; height: 50px; }
 .hotspot.retrato-botao { top: 302px; left: 700px; width: 60px; height: 85px; }
 .hotspot.carta-botao { top: 630px; left: 1050px; width: 130px; height: 50px; }
 .hotspot.quadro-botao { top: 200px; left: 1100px; width: 400px; height: 370px; }
 
-/* CONFIGURAÇÃO DO PERSONAGEM, ESCALA E BALÃO */
+/* --- CONFIGURAÇÃO GERAL DO DIALOGO --- */
 .container-dialogo {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 20px;
+  left: 20px;          /* Cola no canto esquerdo */
   display: flex;
   align-items: flex-end;
-  gap: 0px;
+  gap: 5px;
   z-index: 10;
   width: 90%;
   max-width: 900px;
   pointer-events: none;
 }
-
+/* =========================================== */
+/* PARA AUMENTAR O PERSONAGEM, MEXA AQUI (1)   */
+/* =========================================== */
 .personagem-wrapper {
-  width: 180px;
+  width: 220px;        /* Mude esse valor para aumentar/diminuir o José */
   flex-shrink: 0;
-  margin-bottom: -15px;
+  margin-bottom: -10px;
 }
 
 .finn-img {
@@ -93,50 +94,74 @@
   display: block;
 }
 
-.balao-wrapper {
-  position: relative;
-  max-width: 550px;
-  width: 100%;
-  flex-grow: 0;
-  pointer-events: none;
-}
-.balao-wrapper * {
-  pointer-events: auto;
-}
+/* =========================================== */
+/* PARA AJUSTAR O TAMANHO DO BALÃO, MEXA AQUI (2) */
+/* =========================================== */
+.balao-css {
+  /* Cor de papiro antigo */
+  background-color: #f1e3c3; 
+  /* Borda que simula papiro */
+  border: 3px solid #8b6b4d; 
+  /* Borda arredondada para parecer papel */
+  border-radius: 15px 15px 15px 5px; 
+  color: #3e2723; /* Cor da tinta */
+  
+  /* O espaço onde o texto fica: cima, direita, baixo, esquerda */
+  padding: 30px 50px 30px 30px; 
 
-.balao-imagem {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.texto-balao {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  color: #3e2723;
   font-family: 'SpecialElite', serif;
-  font-size: 1.4rem;
-  text-align: center;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  position: relative;
+  flex-grow: 0; /* Impede o balão de esticar demais */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  line-height: 1.4;
+  pointer-events: auto;
+  min-height: 100px; /* Altura mínima caso a frase seja pequena */
+  max-width: 450px;  /* AQUI VOCÊ DEFINE A LARGURA MÁXIMA DO BALÃO */
+  width: auto;
+}
+
+/* O biquinho do balão feito com CSS puro */
+.balao-css::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  bottom: 15px;
+  border-width: 10px 20px 10px 0;
+  border-style: solid;
+  border-color: transparent #f1e3c3 transparent transparent;
+}
+
+/* Biquinho da Borda do balão (para ficar mais bonito) */
+.balao-css::after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  bottom: 13px;
+  border-width: 12px 20px 12px 0;
+  border-style: solid;
+  border-color: transparent #8b6b4d transparent transparent;
+  z-index: -1;
+}
+
+.balao-css p {
   margin: 0;
 }
 
+/* --- BOTÃO X --- */
 .btn-fechar {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: -10px;
+  right: -10px;
   background: #333;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 .btn-fechar:hover {

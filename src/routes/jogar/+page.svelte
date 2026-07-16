@@ -30,13 +30,13 @@
       texto = "Desliguei o despertador. Hora de levantar!";
     } 
     else if (objeto === "retrato") {
-      texto = "Uma foto antiga de alguém... talvez a mãe do detetive.";
+      texto = "ai ai a foto de Marina sempre me motivando pela manhã.";
     } 
     else if (objeto === "carta") {
-      texto = "Essa carta parece estar lacrada com cera...";
+      texto = "ué uma carta vamos ver o que ela diz: 'José aqui é o... você não precisa saber o meu nome só precisa saber que eu vou me vingar pela prisão do meu irmão. Você tem até o por do sol para me encontrar ou sua amada vai pagar por isso. Eu estou no último andar. prenda-me se for capaz. ok preciso correr'";
     } 
     else if (objeto === "quadro") {
-      texto = "Vários rostos marcados no mapa... o caso 27 parece complicado.";
+      texto = "Vários rostos marcados no mapa... o caso do parque foi complicado mas ja esta resolvido.";
     } 
     else {
       texto = "Apenas um objeto comum nessa sala.";
@@ -53,11 +53,7 @@
 <div class="tela">
   <div class="cenario">
     
-    <!-- BOTÃO DE VOLTAR -->
-    <button class="btn-voltar-provisorio" on:click={voltarMenu}>
-      &larr; Menu Principal
-    </button>
-
+   
     <!-- FUNDO DO QUARTO -->
     <img src="/images/quarto.jpeg" class="fundo" />
 
@@ -68,27 +64,23 @@
     <div class="hotspot carta-botao" on:click={() => interagir('carta')}></div>
     <div class="hotspot quadro-botao" on:click={() => interagir('quadro')}></div>
 
-    <!-- BALÃO E PERSONAGEM -->
+    <!-- PERSONAGEM E BALÃO CSS -->
     {#if dialogoAberto}
       <div class="container-dialogo">
         
-        <!-- CAIXA DE ESCALA (Onde você vai encolher o balão e o personagem) -->
-        <div class="escala-ui">
-          
-          <div class="personagem-wrapper">
-            <img src="/images/Josédp.png" alt="José" class="finn-img" />
-          </div>
-          
-          <div class="balao-wrapper">
-             <img src="/images/balaojosevdd.png" class="balao-imagem" />
-             <p class="texto-balao">{texto}</p>
-             <button class="btn-fechar" on:click={fecharDialogo}>X</button>
-          </div>
+        <!-- Personagem (Aumente aqui o personagem) -->
+        <div class="personagem-wrapper">
+          <img src="/images/Josédp.png" alt="José" class="finn-img" />
+        </div>
+        
+        <!-- Balão Feito Inteiramente no CSS -->
+        <div class="balao-css">
+          <p>{texto}</p>
+          <button class="btn-fechar" on:click={fecharDialogo}>X</button>
+        </div>
 
-        </div> <!-- FIM DO ESCALA-UI -->
+      </div>
+    {/if}
 
-      </div> <!-- FIM DO CONTAINER-DIALOGO -->
-    {/if} <!-- FIM DO IF DO BALÃO -->
-
-  </div> <!-- FIM DO CENARIO -->
-</div> <!-- FIM DA TELA -->
+  </div>
+</div>

@@ -5,14 +5,13 @@
   <p class="empresa">JJGL Studios apresenta</p>
 
   <!-- NOME DO JOGO -->
-  <h1>Detective No Air</h1>
+  <h1>Rastros da Madrugada</h1>
 
   <!-- SINOPSE -->
   <p class="sinopse">
-    Em uma cidade tomada pelo mistério e pelo crime, Fin McClaen um detetive solitário precisa resolver
-    qualquer tipo de caso,até aqueles que desafiam a lógica. Cada decisão pode revelar a verdade, assasinatos
-    ,roubos e muito mais, será que Finn conseguirá desvendar os segredos por trás de cada misterio, embarque
-    nessa aventura e descubra o que está nas entrelinhas,será que consegues?
+    Em uma Olinda envolta em névoa e mistério, o detetive José acorda em seu apartamento e encontra uma carta anônima.
+  Um vilão misterioso sequestrou sua amada, Marina, e o desafia. Para salvá-la, José terá que enfrentar puzzles e armadilhas pelos andares do prédio do seu apartamento, subindo cada vez mais alto até chegar ao confronto final.
+  Será que ele conseguirá derrotar o inimigo antes que o tempo acabe? Ou o fim da sua própria história estará selado para sempre?
   </p>
 
   <!-- CRIADORES -->
