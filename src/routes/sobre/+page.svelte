@@ -17,10 +17,9 @@
   <!-- CRIADORES -->
   <div class="criadores">
     <h2>Creators</h2>
-    <p>João Gabriel</p>
-    <p>João Matheus</p>
-    <p>Lucas Nunes</p>
-    <p>Gabriel Gomes</p>
+    <p>João Gabriel dos Santos Silva</p>
+    <p>João Matheus Ferreira das Neves</p>
+    <p>Lucas Nunes de Oliveira</p>
   </div>
 
   <!-- BOTÃO VOLTAR -->
